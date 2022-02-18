@@ -24,57 +24,57 @@ function assertEqual(actual, expected, testName){
 
 //test cases ==================================================
  
- convertToRoman(36);
+var test1 = assertEqual(output1, "II", "Roman Numeral Test");
+var output1 = convertToRoman(2); // should return string "II"
 
-convertToRoman(2) should return the string II.
-/*
-convertToRoman(3) should return the string III.
+var output2 = convertToRoman(2); //should return the string II.
 
-convertToRoman(4) should return the string IV.
+var output3 = convertToRoman(3); // should return the string III.
 
-convertToRoman(5) should return the string V.
+var output4 = convertToRoman(4); // should return the string IV.
 
-convertToRoman(9) should return the string IX.
+var output5 = convertToRoman(5); // should return the string V.
 
-convertToRoman(12) should return the string XII.
+var output6 = convertToRoman(9); // should return the string IX.
 
-convertToRoman(16) should return the string XVI.
+var output7 = convertToRoman(12); // should return the string XII.
 
-convertToRoman(29) should return the string XXIX.
+var output8 = convertToRoman(16); // should return the string XVI.
 
-convertToRoman(44) should return the string XLIV.
+var output9 = convertToRoman(29); // should return the string XXIX.
 
-convertToRoman(45) should return the string XLV.
+var output10 = convertToRoman(44); // should return the string XLIV.
 
-convertToRoman(68) should return the string LXVIII
+var output11 = convertToRoman(45); // should return the string XLV.
 
-convertToRoman(83) should return the string LXXXIII
+var output12 = convertToRoman(68); // should return the string LXVIII
 
-convertToRoman(97) should return the string XCVII
+var output13 = convertToRoman(83); // should return the string LXXXIII
 
-convertToRoman(99) should return the string XCIX
+var output14 = convertToRoman(97); // should return the string XCVII
 
-convertToRoman(400) should return the string CD
+var output15 = convertToRoman(99); // should return the string XCIX
 
-convertToRoman(500) should return the string D
+var output16 = convertToRoman(400); // should return the string CD
 
-convertToRoman(501) should return the string DI
+var output17 = convertToRoman(500); // should return the string D
 
-convertToRoman(649) should return the string DCXLIX
+var output18 = convertToRoman(501); // should return the string DI
 
-convertToRoman(798) should return the string DCCXCVIII
+var output19 = convertToRoman(649); // should return the string DCXLIX
 
-convertToRoman(891) should return the string DCCCXCI
+var output20 = convertToRoman(798); // should return the string DCCXCVIII
 
-convertToRoman(1000) should return the string M
+var output21 = convertToRoman(891); // should return the string DCCCXCI
 
-convertToRoman(1004) should return the string MIV
+var output22 = convertToRoman(1000); // should return the string M
 
-convertToRoman(1006) should return the string MVI
+var output23 = convertToRoman(1004); // should return the string MIV
 
-convertToRoman(1023) should return the string MXXIII
+var output24 = convertToRoman(1006); // should return the string MVI
 
-convertToRoman(2014) should return the string MMXIV
+var output25 = convertToRoman(1023); // should return the string MXXIII
 
-convertToRoman(3999) should return the string MMMCMXCIX
-*/
+var output26 = convertToRoman(2014); // should return the string MMXIV
+
+var output27 = convertToRoman(3999); // should return the string MMMCMXCIX
