@@ -18,6 +18,7 @@ function palindrome(str) {
 }
 
 // assert function ===============================================================
+
 function assertEqual(actual, expected, testName){
   if(actual === expected){
     console.log("PASSED");
@@ -30,30 +31,50 @@ function assertEqual(actual, expected, testName){
 
 // test cases ====================================================================
 
-var output1 = palindrome("eye"); // should return true.
+var output1 = palindrome("eye"); // should return true
 var test1 = assertEqual(output1, true, "palindrome test");
-console.log(test1);
+console.log("🚀 \\  test1", test1)
 
-/*
-palindrome("_eye") should return true.
+var output2 = palindrome("_eye"); // should return true
+var test2 = assertEqual(output2, true, "palindrome test");
+console.log("🚀 \\  test2", test2)
 
-palindrome("race car") should return true.
+var output3 = palindrome("race car") // should return true
+var test3 = assertEqual(output3, true, "palindrome test");
+console.log("🚀 \\  test3", test3)
 
-palindrome("not a palindrome") should return false.
+var output4 = palindrome("not a palindrome") // should return false.
+var test4 = assertEqual(output4, false, "palindrome test");
+console.log("🚀 \\  test4", test4)
 
-palindrome("A man, a plan, a canal. Panama") should return true.
+var output5 = palindrome("A man, a plan, a canal. Panama") // should return true.
+var test5 = assertEqual(output5, true, "palindrome test");
+console.log("🚀 \\  test5", test5)
 
-palindrome("never odd or even") should return true.
+var output6 = palindrome("never odd or even") // should return true.
+var test6 = assertEqual(output6, true, "palindrome test");
+console.log("🚀 \\  test6", test6)
 
-palindrome("nope") should return false.
+var output7 = palindrome("nope") // should return false.
+var test7 = assertEqual(output7, false, "palindrome test");
+console.log("🚀 \\  test7", test7)
 
-palindrome("almostomla") should return false.
+var output8 = palindrome("almostomla") // should return false.
+var test8 = assertEqual(output8, false, "palindrome test");
+console.log("🚀 \\  test8", test8)
 
-palindrome("My age is 0, 0 si ega ym.") should return true.
+var output9 = palindrome("My age is 0, 0 si ega ym.") // should return true.
+var test9 = assertEqual(output9, true, "palindrome test");
+console.log("🚀 \\  test9", test9)
 
-palindrome("1 eye for of 1 eye.") should return false.
+var output10 = palindrome("1 eye for of 1 eye.") // should return false.
+var test10 = assertEqual(output10, false, "palindrome test");
+console.log("🚀 \\  test10", test10)
 
-palindrome("0_0 (: /-\ :) 0-0") should return true.
+var output11 = palindrome("0_0 (: /-\ :) 0-0") // should return true.
+var test11 = assertEqual(output11, true, "palindrome test");
+console.log("🚀 \\  test11", test11)
 
-palindrome("five|\_/|four") should return false.
-*/
+var output12 = palindrome("five|\_/|four") // should return false.
+var test12 = assertEqual(output12, false, "palindrome test");
+console.log("🚀 \\  test12", test12)
