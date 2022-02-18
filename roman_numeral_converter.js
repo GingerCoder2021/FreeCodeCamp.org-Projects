@@ -25,9 +25,9 @@ function assertEqual(actual, expected, testName){
 //test cases ==================================================
  
  convertToRoman(36);
-/*
-convertToRoman(2) should return the string II.
 
+convertToRoman(2) should return the string II.
+/*
 convertToRoman(3) should return the string III.
 
 convertToRoman(4) should return the string IV.
