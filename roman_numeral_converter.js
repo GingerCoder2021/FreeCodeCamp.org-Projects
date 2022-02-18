@@ -4,9 +4,24 @@ Convert the given number into a roman numeral.
 All roman numerals answers should be provided in upper-case.
 */
 // convert function ===========================================
+
+
+function getPlaceValue(num){  //checks the value place
+  //var num = 1567
+  var ones = Math.floor(num % 10); // 7
+  var tens = Math.floor(num/10 % 10); // 6
+  var hundreds = Math.floor(num/100 % 10); // 5
+  var thousands = Math.floor(num/1000 % 10); // 1
+  }
+  
+
+
 function convertToRoman(num) {
+
   return num;
 }
+
+
 
 // assert function ============================================
 
