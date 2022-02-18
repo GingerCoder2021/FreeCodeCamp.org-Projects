@@ -10,8 +10,19 @@ We'll pass strings with varying formats, such as racecar, RaceCar, and race CAR 
 We'll also pass strings with special symbols, such as 2A3*3a2, 2A3 3a2, and 2_A3*3#A2.
 */
 
+// palindrome function ===========================================================
 function palindrome(str) {
   return true;
 }
 
 palindrome("eye");
+
+
+// assert function ===============================================================
+assertEqual(actual, expected, testName){
+  if(actual === expected){
+    console.log("PASSED")
+  }else{
+    console.log("FAILED "+testName+", expected "+expected+", but got "+actual+".")
+  }
+}
