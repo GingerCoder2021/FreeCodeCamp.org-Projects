@@ -13,7 +13,7 @@ We'll also pass strings with special symbols, such as 2A3*3a2, 2A3 3a2, and 2_A3
 // palindrome function ===========================================================
 
 // removes all punctuation and spaces. returns alphanumeric string
-function cleanString(rawString){
+function cleanString(rawString) {
   var regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
   var cleanWhiteSpace = /\s+/g;
   var punctFreeString = rawString.replace(regex, "");
@@ -22,7 +22,7 @@ function cleanString(rawString){
 }
 
 // puts string into an array, reverses array, then returns back into a string
-function reverseString(string){
+function reverseString(string) {
   var splitString = string.split("");
   var reversedSplitString = splitString.reverse();
   var reversedString = reversedSplitString.join("");
@@ -34,19 +34,19 @@ function palindrome(str) {
   str = cleanString(str); // calls cleanString function to remove punctuation from str
   str = str.toLowerCase(); // turns all string into lowercase strings
   var reversedStr = reverseString(str); // calls function to reverse string
-  if(str === reversedStr){ 
+  if (str === reversedStr) {
     return true;
-  }else{
+  } else {
     return false;
   }
 }
 
 // assert function ===============================================================
 
-function assertEqual(actual, expected, testName){
-  if(actual === expected){
+function assertEqual(actual, expected, testName) {
+  if (actual === expected) {
     return 1
-  }else{
+  } else {
     return -1
   }
 }
