@@ -5,23 +5,67 @@ All roman numerals answers should be provided in upper-case.
 */
 // convert function ===========================================
 
+function getPlaceValue(num) {
+  onesRoman = {
+    1: "I",
+    2: "II",
+    3: "II",
+    4: "IV",
+    5: "V",
+    6: "VI",
+    7: "VII",
+    8: "VIII",
+    9: "IX",
+  };
+  tensRoman = {
+    1: "X",
+    2: "XX",
+    3: "XXX",
+    4: "XL",
+    5: "L",
+    6: "LX",
+    7: "LXX",
+    8: "LXXX",
+    9: "XC",
+  };
+  hundredsRoman = {
+    1: "C",
+    2: "CC",
+    3: "CCC",
+    4: "CD",
+    5: "D",
+    6: "DC",
+    7: "DCC",
+    8: "DCCC",
+    9: "CM",
+  };
+  thousandsRoman = {
+    1: "M",
+    2: "MM",
+    3: "MMM",
+    4: "MV",
+    5: "V",
+    6: "VI",
+    7: "VII",
+    8: "VIII",
+    9: "IX",
+  };
 
-function getPlaceValue(num){  //checks the value place
-  //var num = 1567
+  // var num = 1567;
   var ones = Math.floor(num % 10); // 7
-  var tens = Math.floor(num/10 % 10); // 6
-  var hundreds = Math.floor(num/100 % 10); // 5
-  var thousands = Math.floor(num/1000 % 10); // 1
+  var tens = Math.floor((num / 10) % 10); // 6
+  var hundreds = Math.floor((num / 100) % 10); // 5
+  var thousands = Math.floor((num / 1000) % 10); // 1
+
+  if (thousands > 0) {
   }
-  
 
-
-function convertToRoman(num) {
-
-  return num;
+  return result;
 }
 
-
+function convertToRoman(num) {
+  return num;
+}
 
 // assert function ============================================
 
@@ -40,9 +84,6 @@ function assertEqual(actual, expected, testName) {
     );
   }
 }
-
-
-
 
 //test cases ==================================================
 
