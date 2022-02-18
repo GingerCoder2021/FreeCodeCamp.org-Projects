@@ -45,9 +45,9 @@ function palindrome(str) {
 
 function assertEqual(actual, expected, testName) {
   if (actual === expected) {
-    return 1
+    return console.log("PASSED!");
   } else {
-    return -1
+    return console.log("FALIED: "+testName+", expected "+expected+", but got "+actual+".");
   }
 }
 
