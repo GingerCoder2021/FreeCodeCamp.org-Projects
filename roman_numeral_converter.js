@@ -6,24 +6,28 @@ All roman numerals answers should be provided in upper-case.
 // convert function ===========================================
 function convertToRoman(num) {
   return num;
- }
- 
-
-
-
+}
 
 // assert function ============================================
 
-function assertEqual(actual, expected, testName){
-  if(actual === expected){
-    console.log("PASSED")
-  }else{
-    console.log("FAILED: "+testName+", expected "+expected+", but got "+actual+".")
+function assertEqual(actual, expected, testName) {
+  if (actual === expected) {
+    console.log("PASSED");
+  } else {
+    console.log(
+      "FAILED: " +
+        testName +
+        ", expected " +
+        expected +
+        ", but got " +
+        actual +
+        "."
+    );
   }
 }
 
 //test cases ==================================================
- 
+
 var test1 = assertEqual(output1, "I", "Roman Numeral Test");
 var output1 = convertToRoman(1); // should return string "I"
 
