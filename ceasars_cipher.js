@@ -33,5 +33,5 @@ function assertEqual(actual, expected, testName) {
 var output1 = rot13("this is a string"); 
 var test1 = assertEqual(output1, "", "rot13 test");
 
-var output2 = palindrome(" one 1, two, 3, four, 4"); // should return true
+var output2 = rot13(" one 1, two, 3, four, 4"); // should return true
 var test2 = assertEqual(output2, "", "rot13 test");
