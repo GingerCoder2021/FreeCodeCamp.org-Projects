@@ -74,6 +74,8 @@ var cipher = [
 function rot13(str) {
   var string = [...str]; // takes string input and puts characters into array
   var decryptedString = "";
+
+  // checks to see if letter in string is in the alphabet, then adds cipher letter to decriptedString
   for (var i = 0; i < string.length; i++) {
     if (alphabet.includes(string[i])) {
       for (var j = 0; j < alphabet.length; j++) {
@@ -81,6 +83,7 @@ function rot13(str) {
           decryptedString += cipher[j];
         }
       }
+      // else if not a letter, add current string value to decryptedString (basically: adds spaces, punctuation, etc.) 
     } else {
       decryptedString += string[i];
     }
