@@ -10,7 +10,6 @@ All letters will be uppercase. Do not transform any non-alphabetic character (i.
 */
 
 // alphabet and cipher reference ==============================================
-
 // letters that are used to compare with input string for match
 var alphabet = [
   "A", //[0]
@@ -42,7 +41,7 @@ var alphabet = [
 ];
 
 // alphabet shifted 13 letters to correspond with matching letters
-var cipher = [ 
+var cipher = [
   "N",
   "O",
   "P",
@@ -72,25 +71,24 @@ var cipher = [
 ];
 
 // alphabet and cipher reference ==============================================
-
 function rot13(str) {
   var string = [...str]; // takes string input and puts characters into array
   var decryptedString = "";
-  for (var i = 0; i < string.length; i++) { 
-    if (alphabet.includes(string[i])){
-      for (var j = 0; j < alphabet.length; j++){
-        if(string[i] === alphabet[j]){
-          decryptedString += cipher[j]
+  for (var i = 0; i < string.length; i++) {
+    if (alphabet.includes(string[i])) {
+      for (var j = 0; j < alphabet.length; j++) {
+        if (string[i] === alphabet[j]) {
+          decryptedString += cipher[j];
         }
       }
-    }else {
+    } else {
       decryptedString += string[i];
     }
   }
   return decryptedString;
 }
-// assert function ===============================================================
 
+// assert function ===============================================================
 function assertEqual(actual, expected, testName) {
   if (actual === expected) {
     return console.log("PASSED!");
@@ -108,7 +106,6 @@ function assertEqual(actual, expected, testName) {
 }
 
 // test cases ====================================================================
-
 var output1 = rot13("SERR PBQR PNZC"); // should return FREE CODE CAMP
 var test1 = assertEqual(output1, "FREE CODE CAMP", "rot13 test");
 
