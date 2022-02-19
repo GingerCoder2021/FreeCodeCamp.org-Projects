@@ -9,8 +9,9 @@ Write a function which takes a ROT13 encoded string as input and returns a decod
 All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
 */
 
-//function ==============================================
+// alphabet and cipher reference ==============================================
 
+// letters that are used to compare with input string for match
 var alphabet = [
   "A", //[0]
   "B", //[1]
@@ -40,7 +41,8 @@ var alphabet = [
   "Z", //[25]...
 ];
 
-var cipher = [
+// alphabet shifted 13 letters to correspond with matching letters
+var cipher = [ 
   "N",
   "O",
   "P",
@@ -69,59 +71,24 @@ var cipher = [
   "M",
 ];
 
-var punctuation = [
-  "[",
-  "!",
-  '"',
-  "#",
-  "$",
-  "%",
-  "&",
-  "'",
-  "(",
-  ")",
-  "*",
-  "+",
-  ",",
-  "-",
-  ".",
-  "/",
-  ":",
-  ";",
-  "<",
-  "=",
-  ">",
-  "?",
-  "@",
-  "\\",
-  '"',
-  "]",
-  "^",
-  "_",
-  "`",
-  "{",
-  "|",
-  "}",
-  "~",
-  " ",
-];
-var str = "SERR PBQR PNZC";
-var string = [...str];
-var decryptedString = "";
-for (var i = 0; i < string.length; i++) {
-  for (var j = 0; j < alphabet.length; j++){
-    if (string[i] === alphabet[j]) {
-      decryptedString += cipher[j]
-    }
-  }
-}
+// alphabet and cipher reference ==============================================
 
 function rot13(str) {
-  return str;
+  var string = [...str]; // takes string input and puts characters into array
+  var decryptedString = "";
+  for (var i = 0; i < string.length; i++) { 
+    if (alphabet.includes(string[i])){
+      for (var j = 0; j < alphabet.length; j++){
+        if(string[i] === alphabet[j]){
+          decryptedString += cipher[j]
+        }
+      }
+    }else {
+      decryptedString += string[i];
+    }
+  }
+  return decryptedString;
 }
-
-rot13("SERR PBQR PNZC");
-
 // assert function ===============================================================
 
 function assertEqual(actual, expected, testName) {
@@ -129,7 +96,7 @@ function assertEqual(actual, expected, testName) {
     return console.log("PASSED!");
   } else {
     return console.log(
-      "FALIED: " +
+      "FAILED: " +
         testName +
         ", expected " +
         expected +
