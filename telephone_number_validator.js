@@ -13,7 +13,7 @@ var phoneNumber = [...str]; // conversts string into array
 var min = 10
 var max = 16
 
-var check = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "(", ")", "-"];  // array used to check phoneNumber array
+var check = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "(", ")", "-", " "];  // array used to check phoneNumber array
 
 //checks to see if number is within the length requirements; else returns false
 if(str.length < min | str.length > max){
