@@ -9,24 +9,42 @@ For this challenge you will be presented with a string such as 800-692-7753 or 8
 */
 
 // function ======================================================================
-var phoneNumber = [...str]; // conversts string into array
-var min = 10
-var max = 16
 
-var check = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "(", ")", "-", " "];  // array used to check phoneNumber array
+
+
+var min = 10;
+var max = 16;
+
+var check = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "(", ")", "-", " "]; // array used to check phoneNumber array
 
 //checks to see if number is within the length requirements; else returns false
-if(str.length < min | str.length > max){
+if ((str.length < min) | (str.length > max)) {
   return false;
-}
+} 
+
+// conversts string into array
+function getStrArray(str){
+  var phoneNumber = [...str];
+  return phoneNumber;
+} 
 
 // checks to see if input contains incorrect string values; returns false if detected
-for (var i= 0; i<phoneNumber.length; i++){
-  if (check.includes(phoneNumber[i]) === false)
-  return false;
+function checkPhoneNumberValues(phoneNumber){
+  for (var i = 0; i < phoneNumber.length; i++) {
+    if (check.includes(phoneNumber[i]) === false) return false;
+  }
 }
 
-
+//counts how many numbers are in phoneNumber array
+function countNumber(phoneNumber) {
+  var numberCount = 0;
+  for (var i = 0; i < phoneNumber.length; i++) {
+    if (isNaN(phoneNumber[i]) === false) {
+      numberCount++;
+    } // if number should return false
+  }
+  return numberCount;
+}
 
 
 function telephoneCheck(str) {
