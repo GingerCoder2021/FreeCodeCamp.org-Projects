@@ -8,7 +8,7 @@ All roman numerals answers should be provided in upper-case.
 
 function convertToRoman(num) {
   //Roman Numeral Objects ======
-  onesRoman = {
+  var onesRoman = {
     0: "",
     1: "I",
     2: "II",
@@ -20,7 +20,7 @@ function convertToRoman(num) {
     8: "VIII",
     9: "IX",
   };
-  tensRoman = {
+  var tensRoman = {
     0: "",
     1: "X",
     2: "XX",
@@ -32,7 +32,7 @@ function convertToRoman(num) {
     8: "LXXX",
     9: "XC",
   };
-  hundredsRoman = {
+  var hundredsRoman = {
     0: "",
     1: "C",
     2: "CC",
@@ -44,7 +44,7 @@ function convertToRoman(num) {
     8: "DCCC",
     9: "CM",
   };
-  thousandsRoman = {
+  var thousandsRoman = {
     0: "",
     1: "M",
     2: "MM",
