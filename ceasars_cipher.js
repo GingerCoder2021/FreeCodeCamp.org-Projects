@@ -8,3 +8,30 @@ Write a function which takes a ROT13 encoded string as input and returns a decod
 
 All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
 */
+
+
+//function ==============================================
+function rot13(str) {
+  return str;
+}
+
+rot13("SERR PBQR PNZC");
+
+
+// assert function ===============================================================
+
+function assertEqual(actual, expected, testName) {
+  if (actual === expected) {
+    return console.log("PASSED!");
+  } else {
+    return console.log("FALIED: "+testName+", expected "+expected+", but got "+actual+".");
+  }
+}
+
+// test cases ====================================================================
+
+var output1 = rot13("this is a string"); 
+var test1 = assertEqual(output1, "", "rot13 test");
+
+var output2 = palindrome(" one 1, two, 3, four, 4"); // should return true
+var test2 = assertEqual(output2, "", "rot13 test");
