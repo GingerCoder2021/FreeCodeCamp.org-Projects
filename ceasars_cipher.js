@@ -10,6 +10,7 @@ All letters will be uppercase. Do not transform any non-alphabetic character (i.
 */
 
 //function ==============================================
+
 var alphabet = [
   "A", //[0]
   "B", //[1]
@@ -36,8 +37,84 @@ var alphabet = [
   "W", //[22]
   "X", //[23]
   "Y", //[24]
-  "Z", //[25]
+  "Z", //[25]...
 ];
+
+var cipher = [
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+];
+
+var punctuation = [
+  "[",
+  "!",
+  '"',
+  "#",
+  "$",
+  "%",
+  "&",
+  "'",
+  "(",
+  ")",
+  "*",
+  "+",
+  ",",
+  "-",
+  ".",
+  "/",
+  ":",
+  ";",
+  "<",
+  "=",
+  ">",
+  "?",
+  "@",
+  "\\",
+  '"',
+  "]",
+  "^",
+  "_",
+  "`",
+  "{",
+  "|",
+  "}",
+  "~",
+  " ",
+];
+var str = "SERR PBQR PNZC";
+var string = [...str];
+var decryptedString = "";
+for (var i = 0; i < string.length; i++) {
+  for (var j = 0; j < alphabet.length; j++){
+    if (string[i] === alphabet[j]) {
+      decryptedString += cipher[j]
+    }
+  }
+}
 
 function rot13(str) {
   return str;
@@ -65,8 +142,18 @@ function assertEqual(actual, expected, testName) {
 
 // test cases ====================================================================
 
-var output1 = rot13("this is a string");
-var test1 = assertEqual(output1, "", "rot13 test");
+var output1 = rot13("SERR PBQR PNZC"); // should return FREE CODE CAMP
+var test1 = assertEqual(output1, "FREE CODE CAMP", "rot13 test");
 
-var output2 = rot13(" one 1, two, 3, four, 4"); // should return true
-var test2 = assertEqual(output2, "", "rot13 test");
+var output2 = rot13("SERR CVMMN!"); // should return FREE PIZZA!
+var test2 = assertEqual(output2, "FREE PIZZA!", "rot13 test");
+
+var output2 = rot13("SERR YBIR?"); // should return FREE LOVE?
+var test2 = assertEqual(output2, "FREE LOVE?", "rot13 test");
+
+var output2 = rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."); // should return THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
+var test2 = assertEqual(
+  output2,
+  "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.",
+  "rot13 test"
+);
