@@ -16,6 +16,22 @@ function telephoneCheck(str) {
 
 telephoneCheck("555-555-5555");
 
+// assert function ===============================================================
+function assertEqual(actual, expected, testName) {
+  if (actual === expected) {
+    return console.log("PASSED!");
+  } else {
+    return console.log(
+      "FAILED: " +
+        testName +
+        ", expected " +
+        expected +
+        ", but got " +
+        actual +
+        "."
+    );
+  }
+}
 
 /*
 telephoneCheck("555-555-5555") should return a boolean.
