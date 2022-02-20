@@ -10,49 +10,17 @@ For this challenge you will be presented with a string such as 800-692-7753 or 8
 
 // function ======================================================================
 
-var min = 10;
-var max = 16;
-
-var check = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "(", ")", "-", " "]; // array used to check phoneNumber array
-
-// checks to see if input contains incorrect string values; returns false if detected
-function checkPhoneNumberValues(phoneNumber) {
-  for (var i = 0; i < phoneNumber.length; i++) {
-    if (check.includes(phoneNumber[i]) === false) return false;
-  }
-  return true;
-}
-
-//counts how many numbers are in phoneNumber array
-function countNumbers(phoneNumber) {
-  var numberCount = 0;
-  for (var i = 0; i < phoneNumber.length; i++) {
-    if (isNaN(phoneNumber[i]) === false) {
-      numberCount++;
-    }
-  }
-
-  if (numberCount < min) {
-    return false;
-  } else if (numberCount === min) return true;
-  else {
-    if (numberCount === 11) {
-      if (phoneNumber[0] === 1) return true;
-    } else return false;
-  }
-}
-
 function telephoneCheck(str) {
-  //checks to see if number is within the length requirements; else returns false
-  if ((str.length < min) | (str.length > max)) {
-    return false;
+  var phoneRegex1 = /^1?[-. ]?([0-9]{3})[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  var phoneRegex2 = /^1? ?\(([0-9]{3})\)[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  if(phoneRegex1.test(str)){
+    return true;
   }
-
-  var phoneNumber = [...str]; // conversts string into array
-  if (checkPhoneNumberValues === true) return true;
+  if(phoneRegex2.test(str)){
+    return true;
+  }
+  return false;
 }
-
-telephoneCheck("555-555-5555");
 
 // assert function ===============================================================
 function assertEqual(actual, expected, testName) {
@@ -72,6 +40,7 @@ function assertEqual(actual, expected, testName) {
 }
 
 // test cases ====================================================================
+
 var output1 = telephoneCheck("1 555-555-5555"); // should return true
 var test1 = assertEqual(
   output1,
@@ -160,8 +129,7 @@ var output13 = telephoneCheck("55555555"); // should return false.
 var test13 = assertEqual(
   output13,
   false,
-  "tests if number input is valid telephone number"
-);
+  "tests if number input is valid telephone number");
 
 var output14 = telephoneCheck("(6054756961)"); // should return false.
 var test14 = assertEqual(
