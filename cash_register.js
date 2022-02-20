@@ -33,6 +33,30 @@ function checkCashRegister(price, cash, cid) {
   const VALUE = [0.01, 0.05, 0.1, 0.25, 1, 5, 10, 20, 100];
   var remaining = changeDue;
 
+  for (var i = cid.length - 1; i >= 0; i--) {
+    var leastCount = denominations[i] * 100;
+    var vid = cid[i][1] * 100; //value in drawer for current denomination
+    var n = 0;
+
+    while (remaining >= leastCount && vid > 0) {
+      vid -= leastCount;
+      remaining -= leastCount;
+      n ++;
+    }
+    if (n > 0) {
+      change.change.push([cid[i][0], n * leastCount / 100]);
+    }
+  }
+
+  if (remaining == 0) {
+    change.status = "OPEN";
+  } else {
+    change.status = "INSUFFICIENT_FUNDS"
+    change.change = [];
+  }
+
+  return change;
+}
 
 // test cases ==============================================
 
