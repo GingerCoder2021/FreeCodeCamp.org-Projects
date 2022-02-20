@@ -29,7 +29,10 @@ function checkCashRegister(price, cash, cid) {
     return change;
   }
 
-  
+  change.change = [];
+  const VALUE = [0.01, 0.05, 0.1, 0.25, 1, 5, 10, 20, 100];
+  var remaining = changeDue;
+
 
 // test cases ==============================================
 
