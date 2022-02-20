@@ -13,13 +13,15 @@ For this challenge you will be presented with a string such as 800-692-7753 or 8
 function telephoneCheck(str) {
   var phoneRegex1 = /^1?[-. ]?([0-9]{3})[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
   var phoneRegex2 = /^1? ?\(([0-9]{3})\)[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-  if(phoneRegex1.test(str)){
+  if (phoneRegex1.test(str)) {
+    // returns TRUE if correct phone number format WITHOUT "(, )"
     return true;
   }
-  if(phoneRegex2.test(str)){
+  if (phoneRegex2.test(str)) {
+    // returns TRUE if correct phone number format WITH "(, )"
     return true;
   }
-  return false;
+  return false; // returns FALSE if fails regex format check
 }
 
 // assert function ===============================================================
@@ -129,7 +131,8 @@ var output13 = telephoneCheck("55555555"); // should return false.
 var test13 = assertEqual(
   output13,
   false,
-  "tests if number input is valid telephone number");
+  "tests if number input is valid telephone number"
+);
 
 var output14 = telephoneCheck("(6054756961)"); // should return false.
 var test14 = assertEqual(
