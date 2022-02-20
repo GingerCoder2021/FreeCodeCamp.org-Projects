@@ -12,3 +12,42 @@ Return {status: "CLOSED", change: [...]} with cash-in-drawer as the value for th
 
 Otherwise, return {status: "OPEN", change: [...]}, with the change due in coins and bills, sorted in highest to lowest order, as the value of the change key.
 */
+
+// function ================================================
+function checkCashRegister(price, cash, cid) {
+  let change;
+  return change;
+}
+
+
+
+
+// assert function =========================================
+function assertEqual(actual, expected, testName) {
+  if (actual === expected) {
+    console.log("PASSED");
+  } else {
+    console.log(
+      "FAILED: " +
+        testName +
+        ", expected " +
+        expected +
+        ", but got " +
+        actual +
+        "."
+    );
+  }
+}
+
+// test cases ==============================================
+checkCashRegister(19.5, 20, [
+  ["PENNY", 1.01],
+  ["NICKEL", 2.05],
+  ["DIME", 3.1],
+  ["QUARTER", 4.25],
+  ["ONE", 90],
+  ["FIVE", 55],
+  ["TEN", 20],
+  ["TWENTY", 60],
+  ["ONE HUNDRED", 100],
+]);
