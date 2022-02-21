@@ -19,7 +19,6 @@ function checkCashRegister(price, cash, cid) {
   var change = {};
   var changeDue = (cash - price) * 100;
   var cidTotal = 0;
-
   for (var i = 0; i < cid.length; i++) {
     cidTotal += cid[i][1] * 100;
   }
@@ -32,31 +31,50 @@ function checkCashRegister(price, cash, cid) {
   change.change = [];
   const VALUE = [0.01, 0.05, 0.1, 0.25, 1, 5, 10, 20, 100];
   var remaining = changeDue;
-
   for (var i = cid.length - 1; i >= 0; i--) {
-    var leastCount = denominations[i] * 100;
-    var vid = cid[i][1] * 100; //value in drawer for current denomination
+    var val = VALUE[i] * 100;
+    var tenderInDrawer = cid[i][1] * 100;
     var n = 0;
-
-    while (remaining >= leastCount && vid > 0) {
-      vid -= leastCount;
-      remaining -= leastCount;
+    //cycles through each tender in register
+    while (remaining >= val && tenderInDrawer > 0) {
+      tenderInDrawer -= val;
+      remaining -= val;
       n ++;
     }
     if (n > 0) {
-      change.change.push([cid[i][0], n * leastCount / 100]);
+      change.change.push([cid[i][0], n * val / 100]);
     }
   }
-
+  // tell is register is open 
   if (remaining == 0) {
     change.status = "OPEN";
-  } else {
+  } else { // or if it does not have funds
     change.status = "INSUFFICIENT_FUNDS"
     change.change = [];
   }
-
   return change;
 }
+
+// assert function =========================================
+function assertEqual(actual, expected, testName) {
+  actual = JSON.stringify(actual);
+  expected = JSON.stringify(expected);
+
+  if (actual === expected) {
+    console.log("PASSED " + testName);
+  } else {
+    console.log(
+      "FAILED: " +
+        testName +
+        ", expected " +
+        expected +
+        ", but got " +
+        actual +
+        "."
+    );
+  }
+}
+
 
 // test cases ==============================================
 
@@ -130,7 +148,7 @@ var output4 = checkCashRegister(25, 20, [
   ["ONE HUNDRED", 0],
 ]); // should return {status: "INSUFFICIENT_FUNDS", change: []}.
 var test4 = assertEqual(output4, expected4, "Function Test: 4");
-*/
+
 // Test >=> 5
 var expected5 = {
   status: "CLOSED",
