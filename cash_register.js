@@ -39,17 +39,18 @@ function checkCashRegister(price, cash, cid) {
     while (remaining >= val && tenderInDrawer > 0) {
       tenderInDrawer -= val;
       remaining -= val;
-      n ++;
+      n++;
     }
     if (n > 0) {
-      change.change.push([cid[i][0], n * val / 100]);
+      change.change.push([cid[i][0], (n * val) / 100]);
     }
   }
-  // tell is register is open 
+  // tell is register is open
   if (remaining == 0) {
     change.status = "OPEN";
-  } else { // or if it does not have funds
-    change.status = "INSUFFICIENT_FUNDS"
+  } else {
+    // or if it does not have funds
+    change.status = "INSUFFICIENT_FUNDS";
     change.change = [];
   }
   return change;
@@ -74,7 +75,6 @@ function assertEqual(actual, expected, testName) {
     );
   }
 }
-
 
 // test cases ==============================================
 
